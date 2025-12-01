@@ -4,19 +4,12 @@ import os
 from pathlib import Path
 
 def extract_audio(video_path):
-    """
-    Extracts audio from a video file and returns path to .wav file.
-    """
     wav_path = Path(video_path).with_suffix(".wav")
 
     return str(wav_path)
 
 
 def segment_audio(audio_path):
-    """
-    Splits audio into 10-second segments.
-    Returns list of dicts: [{"id":0,"start":0,"end":10,"path":"chunk_000.wav"}, ...]
-    """
     segments = []
     for i in range(5):  
         segments.append({
@@ -29,10 +22,6 @@ def segment_audio(audio_path):
 
 
 def compute_features(segments):
-    """
-    Computes RMS or other metrics.
-    Returns {segment_id: {"rms": value, ...}}
-    """
     features = {}
     for s in segments:
         features[s["id"]] = {"rms": 0.1, "peak": 0.2} 
@@ -40,9 +29,6 @@ def compute_features(segments):
 
 
 def get_transcript_excerpts(transcript_path, segments):
-    """
-    Matches transcript text roughly to segments.
-    """
     with open(transcript_path, "r") as f:
         text = f.read()
 
@@ -59,10 +45,6 @@ def get_transcript_excerpts(transcript_path, segments):
 
 
 def apply_remediation(segments, rule_outputs):
-    """
-    Applies audio fixes (placeholder).
-    Returns updated segment paths.
-    """
     updated = {}
     for s in segments:
         updated[s["id"]] = s["path"]  
@@ -70,13 +52,6 @@ def apply_remediation(segments, rule_outputs):
 
 
 def export_results(segments, rule_outputs, out_dir):
-    """
-    Writes a final JSON file with:
-    - segments
-    - features
-    - transcript excerpts
-    - rule outputs
-    """
     os.makedirs(out_dir, exist_ok=True)
     
     out = {
