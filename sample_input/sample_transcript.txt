@@ -1,0 +1,3 @@
+This is a sample recording for our multimedia expert system project.
+We are testing audio extraction, segmentation, feature analysis, and remediation.
+Each part of the pipeline will process this clip and generate a JSON report.

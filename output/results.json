@@ -1,0 +1,61 @@
+{
+  "segments": [
+    {
+      "id": 0,
+      "start": 0,
+      "end": 10,
+      "path": "chunk_000.wav"
+    },
+    {
+      "id": 1,
+      "start": 10,
+      "end": 20,
+      "path": "chunk_001.wav"
+    },
+    {
+      "id": 2,
+      "start": 20,
+      "end": 30,
+      "path": "chunk_002.wav"
+    },
+    {
+      "id": 3,
+      "start": 30,
+      "end": 40,
+      "path": "chunk_003.wav"
+    },
+    {
+      "id": 4,
+      "start": 40,
+      "end": 50,
+      "path": "chunk_004.wav"
+    }
+  ],
+  "rules": {
+    "0": {
+      "too_quiet": true,
+      "excerpt": "This is a sample recording for our",
+      "audio_path": "chunk_000.wav"
+    },
+    "1": {
+      "too_quiet": true,
+      "excerpt": "multimedia expert system project. We are testing",
+      "audio_path": "chunk_001.wav"
+    },
+    "2": {
+      "too_quiet": true,
+      "excerpt": "audio extraction, segmentation, feature analysis, and remediation.",
+      "audio_path": "chunk_002.wav"
+    },
+    "3": {
+      "too_quiet": true,
+      "excerpt": "Each part of the pipeline will process",
+      "audio_path": "chunk_003.wav"
+    },
+    "4": {
+      "too_quiet": true,
+      "excerpt": "this clip and generate a JSON report.",
+      "audio_path": "chunk_004.wav"
+    }
+  }
+}
