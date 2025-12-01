@@ -98,13 +98,11 @@ def main():
     parser.add_argument("--out", default="output")
     args = parser.parse_args()
 
-    # Pipeline
     audio_path = extract_audio(args.video)
     segments = segment_audio(audio_path)
     features = compute_features(segments)
     excerpts = get_transcript_excerpts(args.transcript, segments)
 
-    #simple rule output 
     rule_outputs = {
         seg["id"]: {
             "too_quiet": features[seg["id"]]["rms"] < 0.2,
